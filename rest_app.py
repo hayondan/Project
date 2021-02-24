@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask,request
 import db_connector
 from dateutil.parser import parse
@@ -7,11 +9,12 @@ import re
 
 app = Flask(__name__)
 
+print('2blablablablbab')
 
-@add.route ('stop_server')
-def stop_server():
-    os.kill(os.getpid().signal.CTRAL_C_EVENT)
-    return 'Server stopped'
+# @app.route ('stop_server')
+# def stop_server():
+#     os.kill(os.getpid().signal.CTRAL_C_EVENT)
+#     return 'Server stopped'
 
 
 def isDate(string, fuzzy=False):
