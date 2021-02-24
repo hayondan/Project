@@ -13,9 +13,9 @@ pipeline {
             steps {
                 script {
                     if (Boolean.valueOf(env.UNIX)) {
-                        sh 'rest_app.py'
+                        sh 'python rest_app.py'
                     } else {
-                        bat 'rest_app.py'
+                        bat 'python rest_app.py'
                     }
                 }
             }
