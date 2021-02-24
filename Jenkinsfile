@@ -12,11 +12,11 @@ pipeline {
         stage('run python') {
             steps {
                 script {
-                    if (Boolean.valueOf(env.UNIX)) {
+//                     if (Boolean.valueOf(env.UNIX)) {
                         sh 'python rest_app.py'
-                    } else {
-                        bat 'python rest_app.py'
-                    }
+//                     } else {
+//                         bat 'python rest_app.py'
+//                     }
                 }
             }
         }
