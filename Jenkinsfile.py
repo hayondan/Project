@@ -63,7 +63,16 @@ pipeline {
                 }
             }
         }
-}
+        stage('run python'){
+            steps{
+                script{
+                if (Boolean.valueOf(env.UNIX)){
+                    sh 'combined_testing.py'
+                } else {
+                    bat 'combined_testing.py'
 
-}
+                }
+            }
+        }
+    }
 }
