@@ -13,12 +13,57 @@ pipeline {
             steps {
                 script {
                     if (Boolean.valueOf(env.UNIX)) {
-                        sh 'frontend_testing.py'
+                        sh 'rest_app.py'
                     } else {
-                        bat 'frontend_testing.py'
+                        bat 'rest_app.py'
                     }
                 }
             }
         }
-    }
+        stage('run python'){
+            steps{
+                script{
+                    if (Boolean.valueOf(env.UNIX)){
+                        sh 'web_app.py'
+                    } else {
+                        bat 'web_app.py'
+                    }
+                }
+            }
+        }
+        stage('run python'){
+            steps{
+                script{
+                    if (Boolean.valueOf(env.UNIX)){
+                      sh 'backend_testing.py'
+                    } else {
+                        bat 'backend_testing.py'
+                    }
+                }
+            }
+        }
+        stage('run python'){
+            steps{
+                script{
+                if (Boolean.valueOf(env.UNIX)){
+                    sh 'frontend_testing.py'
+                } else {
+                    bat 'frontend_testing.py'
+                    }
+                }
+            }
+        }
+        stage('run python'){
+            steps{
+                script{
+                if (Boolean.valueOf(env.UNIX)){
+                    sh 'combined_testing.py'
+                } else {
+                    bat 'combined_testing.py'
+                }
+            }
+        }
+}
+
+}
 }
