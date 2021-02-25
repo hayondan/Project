@@ -12,9 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-           
-                        sh 'virtualenv venv && . venv/bin/activate && pip3 install requests
-                    
+                        sh 'pip install requests' 
                 }
             }
         }
