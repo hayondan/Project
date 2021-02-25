@@ -9,7 +9,7 @@ pipeline {
                 git 'https://github.com/hayondan/Project_1.git'
             }
         }
-        stage('rest_app.py') {
+        stage('run python rest_app.py') {
             steps {
                 script {
                      if (Boolean.valueOf(env.UNIX)) {
