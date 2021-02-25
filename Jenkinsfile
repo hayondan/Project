@@ -70,8 +70,10 @@ pipeline {
                     sh 'combined_testing.py'
                 } else {
                     bat 'combined_testing.py'
+                    }
                 }
             }
         }
     }
 }
+        
