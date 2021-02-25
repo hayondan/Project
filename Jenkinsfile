@@ -9,7 +9,7 @@ pipeline {
                 git 'https://github.com/hayondan/Project_1.git'
             }
         }
-        stage('run python rest_app.py') {
+        stage('rest_app.py') {
             steps {
                 script {
                      if (Boolean.valueOf(env.UNIX)) {
@@ -60,6 +60,7 @@ pipeline {
                     sh 'combined_testing.py'
                 } else {
                     bat 'combined_testing.py'
+                    }   
                 }
             }
         }
