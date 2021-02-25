@@ -6,7 +6,9 @@ from datetime import datetime
 import os
 import signal
 
-@add.route ('stop_server')
+app.route('stop_server')
+
+
 def stop_server():
     os.kill(os.getpid().signal.CTRAL_C_EVENT)
     return 'Server stopped'
