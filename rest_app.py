@@ -1,6 +1,5 @@
 import os
-
-from flask import Flask,request
+from flask import Flask, request
 import db_connector
 from dateutil.parser import parse
 from datetime import datetime
