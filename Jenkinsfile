@@ -9,6 +9,15 @@ pipeline {
                 git 'https://github.com/hayondan/Project_1.git'
             }
         }
+        stage('build') {
+            steps {
+                script {
+           
+                        sh 'virtualenv venv && . venv/bin/activate && pip3 install requests
+                    
+                }
+            }
+        }
         stage('rest_app.py') {
             steps {
                 script {
