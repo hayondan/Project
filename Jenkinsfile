@@ -24,9 +24,9 @@ pipeline {
             steps{
                 script{
                     if (Boolean.valueOf(env.UNIX)){
-                        sh ' nohup python web_app.py &'
+                        sh 'start /min python web_app.py'
                     } else {
-                        bat ' nohup python web_app.py &'
+                        bat 'start /min python web_app.py'
                     }
                 }
             }
