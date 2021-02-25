@@ -12,8 +12,8 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                        sh 'python -m pip install -U pip --user'
-                        sh 'pip install requests' 
+                        sh 'python -m pip3 install requests -U pip --user'
+                       
                 }
             }
         }
