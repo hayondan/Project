@@ -8,15 +8,7 @@ pipeline {
                 }
                 git 'https://github.com/hayondan/Project_1.git'
             }
-        }
-        stage('build') {
-            steps {
-                script {
-                        sh 'python -m pip3 install requests -U pip --user'
-                       
-                }
-            }
-        }
+        }             
         stage('rest_app.py') {
             steps {
                 script {
