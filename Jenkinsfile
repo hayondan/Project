@@ -13,11 +13,11 @@ pipeline {
         stage('rest_app.py') {
             steps {
                 script {
-                    sh "pip3 install -r requirements.txt"
+                    sh "pip install -r requirements.txt"
                      if (Boolean.valueOf(env.UNIX)) {
-                        sh 'start /min python3 rest_app.py'
+                        sh 'start /min python rest_app.py'
                      } else {
-                        bat 'start /min python3 rest_app.py'
+                        bat 'start /min python rest_app.py'
                     }
                 }
             }
@@ -26,9 +26,9 @@ pipeline {
             steps{
                 script{
                     if (Boolean.valueOf(env.UNIX)){
-                        sh 'start /min python3 web_app.py'
+                        sh 'start /min python web_app.py'
                     } else {
-                        bat 'start /min python3 web_app.py'
+                        bat 'start /min python web_app.py'
                     }
                 }
             }
