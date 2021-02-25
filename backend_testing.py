@@ -1,4 +1,5 @@
-import requests, db_connector
+import requests
+import db_connector
 
 try:
     res = requests.post('http://127.0.0.1:5000/users/27', json={"user_name":"daniel_1"})
