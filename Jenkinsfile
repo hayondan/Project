@@ -12,6 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
+                        sh 'python -m pip install -U pip --user'
                         sh 'pip install requests' 
                 }
             }
