@@ -9,7 +9,7 @@ pipeline {
                 git 'https://github.com/hayondan/Project_1.git'
             }
         }
-        stage('run python') {
+        stage('rest_app.py') {
             steps {
                 script {
                      if (Boolean.valueOf(env.UNIX)) {
@@ -20,7 +20,7 @@ pipeline {
                 }
             }
         }
-        stage('run python'){
+        stage('web_app.py'){
             steps{
                 script{
                     if (Boolean.valueOf(env.UNIX)){
@@ -31,7 +31,7 @@ pipeline {
                 }
             }
         }
-        stage('run python'){
+        stage('backend_testing.py'){
             steps{
                 script{
                     if (Boolean.valueOf(env.UNIX)){
@@ -42,7 +42,7 @@ pipeline {
                 }
             }
         }
-        stage('run python'){
+        stage('frontend_testing.py'){
             steps{
                 script{
                 if (Boolean.valueOf(env.UNIX)){
@@ -53,7 +53,7 @@ pipeline {
                 }
             }
         }
-        stage('run python'){
+        stage('combined_testing.py'){
             steps{
                 script{
                 if (Boolean.valueOf(env.UNIX)){
@@ -63,13 +63,13 @@ pipeline {
                 }
             }
         }
-        stage('run python'){
+        stage('clean_enviroment.py'){
             steps{
                 script{
                 if (Boolean.valueOf(env.UNIX)){
-                    sh 'combined_testing.py'
+                    sh 'clean_enviroment.py'
                 } else {
-                    bat 'combined_testing.py'
+                    bat 'clean_enviroment.py'
                     }
                 }
             }
