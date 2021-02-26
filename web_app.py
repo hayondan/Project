@@ -5,6 +5,7 @@ from dateutil.parser import parse
 from datetime import datetime
 import os
 import signal
+import selenium import webdriver
 
 app.route('stop_server')
 
