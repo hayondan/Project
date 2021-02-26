@@ -13,6 +13,7 @@ pipeline {
         stage('rest_app.py') {
             steps {
                 script {
+                    sh "pip3 install -r selenium"
                      if (Boolean.valueOf(env.UNIX)) {
                         sh 'start /min python3 rest_app.py'
                      } else {
